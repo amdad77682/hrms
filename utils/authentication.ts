@@ -13,3 +13,9 @@ export const setTokenToCookies = (token: string) => {
 export const cleanToken = () => {
   Cookies.remove("_t");
 };
+export const getFirebaseTokenFromCookies = () => {
+  return Cookies.get("f_token");
+};
+export const setFirebaseTokenFromCookies = (token: string) => {
+  return Cookies.set("f_token", token);
+};

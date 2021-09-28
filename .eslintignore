@@ -2,3 +2,4 @@
 **/out/*
 **/.next/*
 server.js
+**/public/firebase-messaging-sw.js
