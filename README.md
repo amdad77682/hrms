@@ -1,4 +1,4 @@
-## Notification System 
+# Notification System Proposal 
 
 Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i was previously work for some backend microservice so i will share your the full plan how can we bulild up a proper hrms along with notifications
 
@@ -44,10 +44,17 @@ Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i
   6. image_url if any image need 
   7. redirect_url onclick redirect
   8. timestamp notification time
-     
-    
-    
+  
+ ## Notification According to topice
  
+  Subcription Topices
+           
+        - topice/update-info/<username>
+        - topice/leave-application/all
+        - topice/leave-application-update/<username>
+    
+    
+# Implementation 
 
 
 ## User Journey should be
@@ -79,7 +86,6 @@ Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i
   
 
 
-## The basic model for notification 
 
 
 
