@@ -1,45 +1,97 @@
-## Example app using MongoDB
+# Notification System Proposal 
 
-[MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.
+Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i was previously work for some backend microservice so i will share your the full plan how can we bulild up a proper hrms along with notifications
 
-If you want to learn more about MongoDB, visit the following pages:
+  ### Scopes in Integration
+  
+   #### Front-End
+    -Tech should be used: Nextjs/ReacJs, Javascript/Typescript, Firebase, TailwindCSS 
+    -there is a login system, after login the login token saved in cookie, login token could provide the user role(Employee/Mamager/Hr Manager) when i decript with JWT
+    -after login user can see the leave applications that he/she applied for, manager can a accept/reject applications from all application sections
+    -Every employee can get push notification for any updates of application depending on preffered settings
+    
+    
 
-- [MongoDB Atlas](https://mongodb.com/atlas)
-- [MongoDB Documentation](https://docs.mongodb.com/)
 
-## Deploy your own
+   #### Back-End
+     -Tech should be used: Nodejs, mongodb
+     -Some apis for leave applications, employee login, employee profile edit update and details.
+     -profile edit api should has SMS notitifaication, Email notification and FCM push notification
+     -accept/reject application api should has SMS notitifaication, Email notification and FCM push notification
+     
+ 
+   Model for notification
+     
+    
+    interface Inotification {
+    _id: string;
+    body: string;
+    title: string;
+    type: string;
+    resource_id: string;
+    to: string;
+    status: string;
+    image_url: null | string;
+    redirect_url: null | string;
+    timestamp: string;
+    }
+   
+  1. title could be "Accpet Leave application"
+  2. body could be "Your application is rejected due to..."
+  3. types are "leave_accept" | "leave_reject"| "leave_application" |"profile_update"
+  4. to could be the user name
+  5. resource_id could be the leave application id
+  6. image_url if any image need 
+  7. redirect_url onclick redirect
+  8. timestamp notification time
+  
+ ## Notification According to topice
+ 
+  Subcription Topices
+           
+        - topice/update-info/<username>
+        - topice/leave-application/all
+        - topice/leave-application-update/<username>
+    
+    
+# Implementation 
 
-Once you have access to the environment variables you'll need, deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-mongodb&project-name=with-mongodb&repository-name=with-mongodb&env=MONGODB_URI&envDescription=Required%20to%20connect%20the%20app%20with%20MongoDB)
+## User Journey should be
+   ### login as a Employee
+      -can see his own applied leaves
+      -can apply for leave
+      -get updates about applications(accept/reject) via push notification
+   ### login as a Manager
+      -can see his own applied leaves
+      -can apply for leave
+      -get updates about applications(accept/reject) via push notification
+      -also get updates about Employee applications that are assigned to him via push notification and notification list
+      -also the applied applications are visible in all applied leave list
+   ### login as a HR Manager
+      -can see his own applied leaves
+      -can apply for leave
+      -get updates about applications(accept/reject) via push notification
+      -also get updates about Employee applications that are assigned to him via push notification and notification list
+      -also  the applied applications are visible in all applied leave list
+      
+ 
+## Technology Used
+      -Nextjs
+      -Typescript
+      -Firebase
+      -tailwindCSS
+      -redux
+      -styled-component
+  
 
-## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-```bash
-npx create-next-app --example with-mongodb with-mongodb-app
-# or
-yarn create next-app --example with-mongodb with-mongodb-app
-```
 
-## Configuration
 
-### Set up a MongoDB database
 
-Set up a MongoDB database either locally or with [MongoDB Atlas for free](https://mongodb.com/atlas).
 
-### Set up environment variables
 
-Copy the `env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
-
-```bash
-cp .env.local.example .env.local
-```
-
-Set each variable on `.env.local`:
-
-- `MONGODB_URI` - Your MongoDB connection string. If you are using [MongoDB Atlas](https://mongodb.com/atlas) you can find this by clicking the "Connect" button for your cluster.
 
 ### Run Next.js in development mode
 
@@ -59,18 +111,6 @@ You will either see a message stating "You are connected to MongoDB" or "You are
 
 When you are successfully connected, you can refer to the [MongoDB Node.js Driver docs](https://mongodb.github.io/node-mongodb-native/3.4/tutorials/collections/) for further instructions on how to query your database.
 
-## Deploy on Vercel
 
-You can deploy this app to the cloud with [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
-#### Deploy Your Local Project
 
-To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and [import to Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example).
-
-**Important**: When you import your project on Vercel, make sure to click on **Environment Variables** and set them to match your `.env.local` file.
-
-#### Deploy from Our Template
-
-Alternatively, you can deploy using our template by clicking on the Deploy button below.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-mongodb&project-name=with-mongodb&repository-name=with-mongodb&env=MONGODB_URI,MONGODB_DB&envDescription=Required%20to%20connect%20the%20app%20with%20MongoDB)
