@@ -6,13 +6,45 @@ Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i
   
    #### Front-End
     -Tech should be used: Nextjs/ReacJs, Javascript/Typescript, Firebase, TailwindCSS 
+    -there is a login system, after login the login token saved in cookie, login token could provide the user role(Employee/Mamager/Hr Manager) when i decript with JWT
+    -after login user can see the leave applications that he/she applied for, manager can a accept/reject applications from all application sections
+    -Every employee can get push notification for any updates of application depending on preffered settings
+    
+    
 
 
    #### Back-End
      -Tech should be used: Nodejs, mongodb
-     -Some apis for leave management
-     -some apis for employee manage with roles
-     -
+     -Some apis for leave applications, employee login, employee profile edit update and details.
+     -profile edit api should has SMS notitifaication, Email notification and FCM push notification
+     -accept/reject application api should has SMS notitifaication, Email notification and FCM push notification
+     
+ 
+   Model for notification
+     
+    
+    interface Inotification {
+    _id: string;
+    body: string;
+    title: string;
+    type: string;
+    resource_id: string;
+    to: string;
+    status: string;
+    image_url: null | string;
+    redirect_url: null | string;
+    timestamp: string;
+    }
+   
+  1. title could be "Accpet Leave application"
+  2. body could be "Your application is rejected due to..."
+  3. types are "leave_accept" | "leave_reject"| "leave_application" |"profile_update"
+  4. to could be the user name
+  5. resource_id could be the leave application id
+  6. image_url if any image need 
+  7. redirect_url onclick redirect
+  8. timestamp notification time
+     
     
     
  
@@ -38,31 +70,18 @@ Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i
       
  
 ## Technology Used
-  -Nextjs
-  -Typescript
-  -Firebase
-  -tailwindCSS
-  -redux
-  -styled-component
+      -Nextjs
+      -Typescript
+      -Firebase
+      -tailwindCSS
+      -redux
+      -styled-component
   
 
 
 ## The basic model for notification 
 
-```
-interface Inotification {
-  _id: string;
-  body: string;
-  title: string;
-  type: string;
-  resource_id: string;
-  to: string;
-  status: string;
-  image_url: null | string;
-  redirect_url: null | string;
-  timestamp: string;
-}
-```
+
 
 
 
