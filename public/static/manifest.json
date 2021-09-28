@@ -1,0 +1,10 @@
+{
+  "name": "Test app Limited",
+  "short_name": "TEST",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fa",
+  "theme_color": "#c92028",
+  "description": "Test app is an e-commerce site which will be capable of providing every kind of goods and products from every sector to every consumer located in Bangladesh."
+  
+}
