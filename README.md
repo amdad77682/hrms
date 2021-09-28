@@ -1,11 +1,42 @@
-## Notification System scopes in front end Integration
-As i was appllied for fornt end (reactjs) so i will tell you about the scopes that i can do about notification system
- -Create some dummy apis that will provides the employee list, my leave list, all leave list and notification list
- -user can login to the system and can apply for leave, check the current status off leaves, get notification according to the notification preference
+## Notification System 
+
+Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i was previously work for some backend microservice so i will share your the full plan how can we bulild up a proper hrms along with notifications
+
+  ### Scopes in Integration
+  
+   #### Front-End
+    -Tech should be used: Nextjs/ReacJs, Javascript/Typescript, Firebase, TailwindCSS 
+
+
+   #### Back-End
+     -Tech should be used: Nodejs, mongodb
+     -Some apis for leave management
+     -some apis for employee manage with roles
+     -
+    
+    
  
 
 
-
+## User Journey should be
+   ### login as a Employee
+      -can see his own applied leaves
+      -can apply for leave
+      -get updates about applications(accept/reject) via push notification
+   ### login as a Manager
+      -can see his own applied leaves
+      -can apply for leave
+      -get updates about applications(accept/reject) via push notification
+      -also get updates about Employee applications that are assigned to him via push notification and notification list
+      -also the applied applications are visible in all applied leave list
+   ### login as a HR Manager
+      -can see his own applied leaves
+      -can apply for leave
+      -get updates about applications(accept/reject) via push notification
+      -also get updates about Employee applications that are assigned to him via push notification and notification list
+      -also  the applied applications are visible in all applied leave list
+      
+ 
 ## Technology Used
   -Nextjs
   -Typescript
@@ -16,9 +47,10 @@ As i was appllied for fornt end (reactjs) so i will tell you about the scopes th
   
 
 
-## the basic model for notification 
+## The basic model for notification 
 
-```interface Inotification {
+```
+interface Inotification {
   _id: string;
   body: string;
   title: string;
@@ -33,14 +65,6 @@ As i was appllied for fornt end (reactjs) so i will tell you about the scopes th
 ```
 
 
-
-## Configuration
-
-### Set up a MongoDB database
-
-
-
-### Set up environment variables
 
 
 
@@ -62,6 +86,6 @@ You will either see a message stating "You are connected to MongoDB" or "You are
 
 When you are successfully connected, you can refer to the [MongoDB Node.js Driver docs](https://mongodb.github.io/node-mongodb-native/3.4/tutorials/collections/) for further instructions on how to query your database.
 
-## Deploy on Vercel
+
 
 
