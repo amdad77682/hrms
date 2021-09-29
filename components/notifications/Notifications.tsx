@@ -14,6 +14,44 @@ interface Inotification {
   redirect_url: null | string;
   timestamp: string;
 }
+const dummy_notification: Inotification[] = [
+  {
+    _id: "234325",
+    body: "Your leave application is accepted",
+    title: "Leave application",
+    type: "leave_application",
+    resource_id: "10",
+    to: "amdad",
+    status: "unread",
+    image_url: null,
+    redirect_url: null,
+    timestamp: "2021-09-27T21:16:19.527Z",
+  },
+  {
+    _id: "234325",
+    body: "Your leave application is accepted",
+    title: "Leave application",
+    type: "leave_application",
+    resource_id: "10",
+    to: "amdad",
+    status: "unread",
+    image_url: null,
+    redirect_url: null,
+    timestamp: "2021-09-27T21:16:19.527Z",
+  },
+  {
+    _id: "234325",
+    body: "Your leave application is accepted",
+    title: "Leave application",
+    type: "leave_application",
+    resource_id: "10",
+    to: "amdad",
+    status: "unread",
+    image_url: null,
+    redirect_url: null,
+    timestamp: "2021-09-27T21:16:19.527Z",
+  },
+];
 
 const Notifications = ({ toggle }) => {
   const [loading, setLoading] = React.useState(false);
@@ -25,7 +63,7 @@ const Notifications = ({ toggle }) => {
         try {
           setLoading(true);
 
-          setNotifications([]);
+          setNotifications(dummy_notification);
           setLoading(false);
         } catch (error) {
           setLoading(false);
@@ -96,7 +134,7 @@ const Notifications = ({ toggle }) => {
                         />
 
                         <small className="font-bold text-gray-800">
-                          {new Date(val.title)}
+                          {`1m ago`}
                         </small>
                       </div>
                     </div>

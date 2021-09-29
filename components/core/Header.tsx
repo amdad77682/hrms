@@ -2,6 +2,7 @@ import { Button } from "../common/Button";
 import { CustomPopover } from "../common/Popover";
 import { FaUserCircle } from "react-icons/fa";
 import Notification from "../notifications/Notification";
+import { cleanToken } from "../../utils/authentication";
 
 export default function Header(): JSX.Element {
   return (
@@ -61,6 +62,8 @@ export default function Header(): JSX.Element {
                         block={true}
                         onClick={() => {
                           //
+                          cleanToken();
+                          window.location.href = "/login";
                         }}
                       >
                         Sign out

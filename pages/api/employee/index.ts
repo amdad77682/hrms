@@ -1,5 +1,5 @@
 import nextConnect from "next-connect";
-import middleware from "../../../lib/middleware/indeex";
+import middleware from "../../../lib/middleware/index";
 const employees = [
   {
     id: 1,
