@@ -7,7 +7,7 @@ export default function AllLeaves() {
   const { leaves } = useLeaves();
   return (
     <div className="p-4">
-      <h1>All Leaves</h1>
+      <h1>All Leave Applications</h1>
       <div className="table-responsive overflow-y-auto p-4">
         {leaves && Array.isArray(leaves) && leaves.length ? (
           <table className="w-full bg-white shadow table-auto table-basic">
