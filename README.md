@@ -2,13 +2,14 @@
 
 Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i was previously work for some backend microservice so i will share your the full plan how can we bulild up a proper hrms along with notifications
 
-  ### Scopes in Integration
+  ### Scopes of Integration
   
    #### Front-End
     -Tech should be used: Nextjs/ReacJs, Javascript/Typescript, Firebase, TailwindCSS 
     -there is a login system, after login the login token saved in cookie, login token could provide the user role(Employee/Mamager/Hr Manager) when i decript with JWT
     -after login user can see the leave applications that he/she applied for, manager can a accept/reject applications from all application sections
     -Every employee can get push notification for any updates of application depending on preffered settings
+    
     
     
 
@@ -49,9 +50,9 @@ Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i
  
   Subcription Topices
            
-        - topice/update-info/<username>
-        - topice/leave-application/all
-        - topice/leave-application-update/<username>
+        - topice/update_info_<username>
+        - topice/leave_application_all
+        - topice/leave_application_update_<username>
     
     
 # Implementation 
@@ -86,9 +87,13 @@ Firstly i have to told you that i was appllied for fornt-end (reactJs). Though i
   
 
 
+## Login credential
+```
 
+username:amdad
+password:#11111111
 
-
+```
 
 
 
